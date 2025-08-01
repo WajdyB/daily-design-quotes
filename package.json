@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "echo 'no build script'"
+    "build": "node build.js",
+    "dev": "echo 'Static site - serve with any static server'"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
