@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily Design Quote with Voice Reader - Get inspired with daily design quotes and listen to them with text-to-speech">
+    <meta name="keywords" content="design quotes, creativity, inspiration, text-to-speech, daily quotes">
+    <meta name="author" content="Daily Design Quote">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Quotes">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💭</text></svg>">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>Daily Design Quote with Voice Reader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">💭</span>
+                    Daily Design Quote
+                </h1>
+                
+                <div class="controls">
+                    <!-- Voice Controls -->
+                    <div class="voice-controls">
+                        <select id="voiceSelect" class="voice-select" aria-label="Select voice">
+                            <option value="">Loading voices...</option>
+                        </select>
+                        
+                        <button id="muteToggle" class="control-btn mute-btn" aria-label="Toggle auto-read">
+                            <span class="mute-icon">🔊</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Theme Toggle -->
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="themeToggle" class="theme-checkbox">
+                        <label for="themeToggle" class="theme-label" aria-label="Toggle dark mode">
+                            <span class="theme-slider">
+                                <span class="theme-icon sun">☀️</span>
+                                <span class="theme-icon moon">🌙</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="quote-section">
+                <div class="quote-container">
+                    <div class="quote-content" id="quoteContent">
+                        <blockquote class="quote-text" id="quoteText">
+                            Loading your daily inspiration...
+                        </blockquote>
+                        <cite class="quote-author" id="quoteAuthor">
+                            <!-- Author will be loaded here -->
+                        </cite>
+                    </div>
+                    
+                    <div class="quote-actions">
+                        <button id="readAgainBtn" class="read-again-btn" aria-label="Read quote again">
+                            <span class="btn-icon">🔊</span>
+                            Read Again
+                        </button>
+                        
+                        <div class="quote-info">
+                            <span class="quote-date" id="quoteDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Loading Indicator -->
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading your daily quote...</p>
+            </div>
+            
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <p>Something went wrong. Please refresh the page.</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Daily Design Quote. Inspiring creativity, one quote at a time.</p>
+        </footer>
+    </div>
+
+    <!-- Audio Status Indicator -->
+    <div class="audio-indicator" id="audioIndicator">
+        <div class="audio-wave">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="audio-text">Speaking...</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
